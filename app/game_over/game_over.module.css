@@ -1,0 +1,9 @@
+.font{
+    background:yellow;
+    display: flex;
+    padding-top:100px;
+    justify-content: center;
+    width:100%;
+    height:200px;
+
+}
