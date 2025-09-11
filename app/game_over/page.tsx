@@ -1,5 +1,5 @@
 import styles from "./game_over.module.css"
-import {Active} from "/app/page.tsx";
+import {Active} from "/app/page";
 
 
 export default function  Gameover(){
