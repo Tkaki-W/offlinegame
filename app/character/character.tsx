@@ -2,7 +2,7 @@
 import styles from "./character.module.css";
 import {useEffect, useRef, useState} from "react";
 import {gsap} from "gsap";
-import {Active} from "../app/page.tsx";
+import {Active} from "../page.tsx";
 
 export function Character(){
     //useRefフックを使ってDOM(ページ内の設計図)に、アニメーションの部分があることを先におしえる
