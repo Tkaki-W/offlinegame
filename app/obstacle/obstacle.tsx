@@ -12,7 +12,7 @@ export function Obstacle(){
     const [xpositions, setPositions] = useState([]);
     const router = useRouter();
     //sleep関数を設定
-    const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+    const sleep = (ms:number) => new Promise(resolve => setTimeout(resolve, ms));
 
     //要素のx座標を20 msに一回20だけ動かす
     const  move_xpositions = async ()=>{  
