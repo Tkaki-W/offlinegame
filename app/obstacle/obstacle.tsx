@@ -74,7 +74,7 @@ export function Obstacle(){
 
     useEffect(()=>{
             //はみ出た分は取り除く
-        if(xpositions[0] <= -100){
+        if(xpositions[0] <= -50){
             rem_xpositions();
         }
         });
