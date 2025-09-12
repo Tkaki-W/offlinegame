@@ -35,11 +35,6 @@ export default function Home() {
 
 console.log("はーい");
 
-if(gameover == true){
-  return (
-    <div></div>
-  )
-}else{
   return(
         <div>
       <div className ={style.game_box}>
@@ -53,7 +48,6 @@ if(gameover == true){
   );
 }
   
-}
 
 export function Active(){
   isActive = !check();
