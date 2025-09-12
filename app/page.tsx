@@ -3,9 +3,8 @@ import { useState, useEffect } from 'react';
 import style from "./page.module.css";
 import styles from "./obstacle/obstacle.module.css"
 import {Character} from "./character/character";
-import {Obstacle} from "./obstacle/obstacle"
-import {Gameover} from "./game_over/game_over"
-import {Floor} from "./floor/floor.tsx";
+import {Obstacle} from "./obstacle/obstacle";
+import {Floor} from "./floor/floor";
 
 let isActive = true;
 let gameover = false;
