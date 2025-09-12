@@ -2,7 +2,7 @@
 import styles from "./obstacle.module.css";
 import {useEffect, useRef, useState} from "react";
 import {gsap} from "gsap";
-import {Active} from "/app/page";
+import {Active} from "../app/page";
 import {useRouter} from "next/navigation"
 
  let isActive = true;
