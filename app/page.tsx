@@ -28,13 +28,6 @@ export default function Home() {
   const [message, setMessage] = useState('');
   const [isGameOver, setIsGameOver] = useState(false);
 
-useEffect(()=>{
-  console.log(isGameOver);
-  check();
-  gameover = check();
-  setIsGameOver(gameover);
-},[]);
-
 /*  useEffect(() => {
     fetch('http://localhost:5000/')
       .then((res) => res.text())
