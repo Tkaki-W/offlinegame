@@ -7,7 +7,6 @@ import {Obstacle} from "./obstacle/obstacle";
 import {Floor} from "./floor/floor";
 
 let isActive = true;
-let gameover = false;
 
 const check = ()=>{
   if(typeof window !== 'undefined'){
@@ -26,7 +25,6 @@ const check = ()=>{
 
 export default function Home() {
   const [message, setMessage] = useState('');
-  const [isGameOver, setIsGameOver] = useState(false);
 
 /*  useEffect(() => {
     fetch('http://localhost:5000/')
