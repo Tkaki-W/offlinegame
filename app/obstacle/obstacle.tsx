@@ -9,7 +9,7 @@ import {useRouter} from "next/navigation"
 
 export function Obstacle(){
     const obstacleRef = useRef(null);
-    const [xpositions, setPositions] = useState([]);
+    const [xpositions, setPositions] = useState<number[]>([]);
     const router = useRouter();
     //sleep関数を設定
     const sleep = (ms:number) => new Promise(resolve => setTimeout(resolve, ms));
