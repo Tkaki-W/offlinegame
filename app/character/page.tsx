@@ -4,7 +4,7 @@ import {useEffect, useRef, useState} from "react";
 import {gsap} from "gsap";
 import {Active} from "../page";
 
-export function Character(){
+export default function Character(){
     //useRefフックを使ってDOM(ページ内の設計図)に、アニメーションの部分があることを先におしえる
     const characterRef = useRef(null);
     const isJumping = useRef(false);
