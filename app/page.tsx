@@ -9,7 +9,6 @@ import {Gameover} from "./game_over/page";
 import {Timer} from "./timer/page";
 import {Bestscore} from "./sql/page"
 
-let isActive = true;
 let save_gameover = false;
 let content;
 
