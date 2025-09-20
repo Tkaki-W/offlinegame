@@ -2,7 +2,7 @@
 import{getBestScore} from "./sql";
 import { useEffect, useState } from "react";
 
-export function Bestscore(value: number) {
+export function Bestscore(props:{value: number}) {
   const [bestScore, setBestScore] = useState<number | null>(null);
 
   useEffect(() => {
