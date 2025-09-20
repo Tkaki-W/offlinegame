@@ -3,11 +3,11 @@ import { useState, useEffect } from 'react';
 import style from "./page.module.css";
 import styles from "./obstacle/obstacle.module.css"
 import {Character} from "./character/character";
-import {Obstacle} from "./obstacle/page";
-import {Floor} from "./floor/page";
-import {Gameover} from "./game_over/page";
-import {Timer} from "./timer/page";
-import {Bestscore} from "./sql/page"
+import {Obstacle} from "./obstacle/obstacle";
+import {Floor} from "./floor/floor";
+import {Gameover} from "./game_over/game_over";
+import {Timer} from "./timer/timer";
+import {Bestscore} from "./sql/score"
 
 let save_gameover = false;
 let content;
