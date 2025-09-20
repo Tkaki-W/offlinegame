@@ -2,9 +2,8 @@
 import styles from "./character.module.css";
 import {useEffect, useRef, useState} from "react";
 import {gsap} from "gsap";
-import {Active} from "../page";
 
-export default function Character(){
+export function Character(){
     //useRefフックを使ってDOM(ページ内の設計図)に、アニメーションの部分があることを先におしえる
     const characterRef = useRef(null);
     const isJumping = useRef(false);
@@ -30,14 +29,9 @@ export default function Character(){
 
 
     useEffect(()=>{
-        
-        const isActive = Active().isActive;
         window.addEventListener("click", ()=>{
                 jump();
         });
-        if(isActive){
-            console.log("active")
-        }
     })
     return(
     <div>

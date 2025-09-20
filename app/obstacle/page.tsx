@@ -2,7 +2,6 @@
 import styles from "./obstacle.module.css";
 import {useEffect, useRef, useState} from "react";
 import {gsap} from "gsap";
-import {Active} from "../page";
 import {useRouter} from "next/navigation"
 
  let isActive = true;
@@ -64,11 +63,7 @@ export function Obstacle(){
 
 
     useEffect(()=>{
-        isActive = Active().isActive;
-        if(isActive == true){
         move_xpositions();
-    }else{
-    }
     });
 
     useEffect(()=>{
