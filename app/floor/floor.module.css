@@ -1,6 +1,6 @@
 .line{
     border-bottom:1px solid black;
-    width:100vh;
+    width:100%;
     position:absolute;
     bottom:0;
 }

@@ -2,11 +2,16 @@
 import { useState, useEffect } from 'react';
 import style from "./page.module.css";
 import styles from "./obstacle/obstacle.module.css"
-import {Character} from "./character/character";
-import {Obstacle} from "./obstacle/obstacle";
-import {Floor} from "./floor/floor";
+import {Character} from "./character/page";
+import {Obstacle} from "./obstacle/page";
+import {Floor} from "./floor/page";
+import {Gameover} from "./game_over/page";
+import {Timer} from "./timer/page";
+import {Bestscore} from "./sql/page"
 
 let isActive = true;
+let save_gameover = false;
+let content;
 
 const check = ()=>{
   if(typeof window !== 'undefined'){
@@ -25,7 +30,9 @@ const check = ()=>{
 
 export default function Home() {
   const [message, setMessage] = useState('');
-
+  const [gameover , setGameOver] = useState(false);
+    //sleep関数を設定
+  const sleep = (ms:number) => new Promise(resolve => setTimeout(resolve, ms));
 /*  useEffect(() => {
     fetch('http://localhost:5000/')
       .then((res) => res.text())
@@ -33,21 +40,48 @@ export default function Home() {
   }, []);
 */
 
-console.log("はーい");
+  console.log("Now is "+gameover);
+
+  useEffect(() => {
+    (async () => {
+      if(!save_gameover){
+        while (!save_gameover) {
+            await sleep(10);
+            save_gameover = check();
+            await setGameOver(save_gameover); 
+            if (save_gameover) break;
+        }
+    }})();
+  }, []);
+
+
+  if(!gameover){
+      content =(
+      <div>
+        <div className ={style.game_box}>
+          <div className ={style.display}>
+            <Character/>
+            <Obstacle/>
+          </div>
+            <Floor/>
+        </div>
+      </div>
+  )}else{
+    content =( 
+    <div>
+      <Gameover/>
+      <Bestscore/>
+    </div>
+  )}
+
 
   return(
-        <div>
-      <div className ={style.game_box}>
-        <div className ={style.display}>
-          <Character/>
-          <Obstacle/>
-        </div>
-          <Floor/>
-      </div>
+    <div>
+    <Timer gameover = {gameover}/>
+    {content}
     </div>
-  );
+  )
 }
-  
 
 export function Active(){
   isActive = !check();

@@ -1,7 +1,7 @@
 import styles from "./game_over.module.css"
 
 
-export default function  Gameover(){
+export function Gameover(){
     return(
         <div>
             <h1 className={styles.font}>

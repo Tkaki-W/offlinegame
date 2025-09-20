@@ -30,11 +30,11 @@ export function Character(){
 
 
     useEffect(()=>{
+        
         const isActive = Active().isActive;
-        window.addEventListener("keydown", (e)=>{
-            if(e.code === "Space"){
+        window.addEventListener("click", ()=>{
                 jump();
-        }});
+        });
         if(isActive){
             console.log("active")
         }

@@ -17,7 +17,7 @@ export function Obstacle(){
     //要素のx座標を20 msに一回20だけ動かす
     const  move_xpositions = async ()=>{  
         await sleep(20);
-        setPositions(prev => prev.map(x=>x-10));
+        setPositions(prev => prev.map(x=>x-20));
     }
 
     //要素を描画する
@@ -41,7 +41,7 @@ export function Obstacle(){
 
     //要素のx座標をxposition配列に追加する(x=1000から始まる)
     const add_xpositions = async()=>{
-        const spawn_xposition = 1000
+        const spawn_xposition = window.innerWidth;
         console.log(xpositions)
         //これで新しいxpositionが末尾に追加
         setPositions(prev =>{
@@ -68,13 +68,12 @@ export function Obstacle(){
         if(isActive == true){
         move_xpositions();
     }else{
-        router.replace("/game_over");
     }
     });
 
     useEffect(()=>{
             //はみ出た分は取り除く
-        if(xpositions[0] <= -50){
+        if(xpositions[0] <= -0.1){
             rem_xpositions();
         }
         });
@@ -82,7 +81,7 @@ export function Obstacle(){
     useEffect(() => {
     (async () => {
         while (isActive) {
-            const delay = Math.floor(Math.random() * 3000) + 200; // 1〜3秒
+            const delay = Math.floor(Math.random() * 2000) ; // 1〜3秒
             await sleep(delay);
             if (!isActive) break;
             add_xpositions();
