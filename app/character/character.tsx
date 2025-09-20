@@ -1,7 +1,7 @@
 "use client"
 import styles from "./character.module.css";
-import {useEffect, useRef, useState} from "react";
 import {gsap} from "gsap";
+import {useRef, useEffect} from "react";
 
 export function Character(){
     //useRefフックを使ってDOM(ページ内の設計図)に、アニメーションの部分があることを先におしえる

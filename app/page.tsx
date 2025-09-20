@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import style from "./page.module.css";
 import styles from "./obstacle/obstacle.module.css"
-import {Character} from "./character/page";
+import {Character} from "./character/character";
 import {Obstacle} from "./obstacle/page";
 import {Floor} from "./floor/page";
 import {Gameover} from "./game_over/page";
@@ -82,10 +82,3 @@ export default function Home() {
     </div>
   )
 }
-
-export function Active(){
-  isActive = !check();
-  return{
-    isActive
-  };
-};
