@@ -25,6 +25,8 @@ const check = ():boolean=>{
       d1.bottom < d2.top ||
       d1.left > d2.right
   );
+}else{
+  return false;
 }};
 
 export default function Home() {
