@@ -12,7 +12,7 @@ import {Bestscore} from "./sql/score"
 let save_gameover = false;
 let content;
 
-const check = ()=>{
+const check = ():boolean=>{
   if(typeof window !== 'undefined'){
   const elm1 = document.getElementsByClassName(styles.obstacle);
   const elm2 = document.getElementById("chara");
@@ -24,7 +24,7 @@ const check = ()=>{
       d1.right < d2.left ||
       d1.bottom < d2.top ||
       d1.left > d2.right
-  )
+  );
 }};
 
 export default function Home() {
@@ -47,7 +47,7 @@ export default function Home() {
         while (!save_gameover) {
             await sleep(10);
             save_gameover = check();
-            await setGameOver(save_gameover); 
+            setGameOver(save_gameover); 
             if (save_gameover) break;
         }
     }})();
