@@ -1,6 +1,8 @@
+"use client"
+
 import {useEffect, useState} from "react";
 import {Active} from "../page";
-import {addScore} from "../sql/sql.tsx";
+import {addScore} from "../sql/sql";
 
 const save_timer = 0;
 let add_checker = 0;
