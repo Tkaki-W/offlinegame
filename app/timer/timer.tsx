@@ -5,7 +5,11 @@ import {addScore} from "../sql/sql";
 
 let add_checker = 0;
 
-export function Timer({gameover}: boolean){
+type TimerProps = {
+    gameover: boolean;
+};
+
+export function Timer({gameover}: TimerProps){
     const [timer, setTimer] = useState(0);
         //sleep関数を設定
     const sleep = (ms:number) => new Promise(resolve => setTimeout(resolve, ms));
