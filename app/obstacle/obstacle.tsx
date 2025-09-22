@@ -15,8 +15,10 @@ export function Obstacle(){
 
     //要素のx座標を20 msに一回20だけ動かす
     const  move_xpositions = async ()=>{  
-        await sleep(20);
-        setPositions(prev => prev.map(x=>x-20));
+        while(true){
+            await sleep(10);
+            setPositions(prev => prev.map(x=>x-8));
+        }
     }
 
     //要素を描画する
@@ -64,7 +66,7 @@ export function Obstacle(){
 
     useEffect(()=>{
         move_xpositions();
-    });
+    },[]);
 
     useEffect(()=>{
             //はみ出た分は取り除く
@@ -76,7 +78,7 @@ export function Obstacle(){
     useEffect(() => {
     (async () => {
         while (isActive) {
-            const delay = Math.floor(Math.random() * 2000) ; // 1〜3秒
+            const delay = Math.floor(Math.random() * 1000+ Math.random()*1000) ; // 1〜3秒
             await sleep(delay);
             if (!isActive) break;
             add_xpositions();

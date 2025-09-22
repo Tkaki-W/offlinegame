@@ -36,7 +36,11 @@ export function Timer({gameover}: TimerProps){
     },);
     return(
         <div>
-            <h1>your score is {timer}</h1>
+            <h1 style={{textAlign:"center",
+                        border:"1px solid black",
+                        background:"gray"
+            }}>Click the Screen to Junp</h1>
+            <h4>your score is {timer}</h4>
         </div>
     )
 }
