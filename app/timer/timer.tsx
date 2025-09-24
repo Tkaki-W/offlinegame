@@ -16,11 +16,9 @@ export function Timer({gameover}: TimerProps){
     useEffect(() => {
         (async () => {
             if(gameover){
-                console.log("ブレーク");
                 if(add_checker == 0){
                     add_checker = 1;
                     addScore(timer);
-                    console.log(timer);
                 }
             }else{
                 await sleep(1000);
@@ -29,7 +27,6 @@ export function Timer({gameover}: TimerProps){
                     const next = prev + 1;
                     return next;
                 });
-                console.log("ブレークしていない")
             }
             }
         })();

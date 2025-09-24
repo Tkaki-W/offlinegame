@@ -41,7 +41,6 @@ export default function Home() {
   }, []);
 */
 
-  console.log("Now is "+gameover);
 
   useEffect(() => {
     (async () => {
@@ -70,8 +69,8 @@ export default function Home() {
   )}else{
     content =( 
     <div>
-      <Gameover/>
       <Bestscore/>
+      <Gameover/>
     </div>
   )}
 

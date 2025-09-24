@@ -1,7 +1,4 @@
 .character{
-    border:1px solid black;
-    height:30px;
-    width:30px;
     position: absolute;
     bottom:0;
     left:50px;

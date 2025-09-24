@@ -34,9 +34,8 @@ export function Character(){
         });
     })
     return(
-    <div>
-        <div ref={characterRef} className = {styles.character} id = "chara">
-        </div>
+    <div ref={characterRef} className = {styles.character} id = "chara">
+        <img src="./picture/dog-solid-full.svg"  height="30" width="30px"/>
     </div>
     );
 }
