@@ -37,7 +37,6 @@ export function Obstacle(){
                     position:"absolute",
                     left: `${xposition_i}px  `,
                     bottom:`${ypositions[i]}px`}}
-                    id = "obj"
                 >
                     {ypositions[i] === 0? 
                     <img src="./picture/tree-solid-full.svg" width="50" height="50"/>:
