@@ -2,7 +2,7 @@
 import { NextResponse } from 'next/server';
 import { neon } from '@neondatabase/serverless';
 
-
+//データベースにアクセスして、スコアを追加する。
  export async function addScore(value: number){
   if(!process.env.DATABASE_URL){
     throw new Error("database is not exist");
@@ -11,6 +11,7 @@ import { neon } from '@neondatabase/serverless';
   await sql`INSERT INTO scores (score) VALUES (${value});`;
 }
 
+//データベースにアクセスして、スコアを得る。
 export async function getBestScore(){
   if(!process.env.DATABASE_URL){
     throw new Error("database is not exist");

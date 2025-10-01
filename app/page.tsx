@@ -12,6 +12,7 @@ import {Bestscore} from "./sql/score"
 let save_gameover = false;
 let content;
 
+//障害物とキャラクターが重なったらtrueを返す。
 const check = ():boolean=>{
   if(typeof window !== 'undefined'){
   const elm1 = document.getElementsByClassName(styles.obstacle);
@@ -29,19 +30,14 @@ const check = ():boolean=>{
   return false;
 }};
 
+//
 export default function Home() {
-  const [message, setMessage] = useState('');
+  //gameover変数とその内容を変更する関数を設定する
   const [gameover , setGameOver] = useState(false);
     //sleep関数を設定
   const sleep = (ms:number) => new Promise(resolve => setTimeout(resolve, ms));
-/*  useEffect(() => {
-    fetch('http://localhost:5000/')
-      .then((res) => res.text())
-      .then((data) => setMessage(data));
-  }, []);
-*/
 
-
+  //レンダリングの都度要素が重なっているかチェックをする
   useEffect(() => {
     (async () => {
       if(!save_gameover){
@@ -54,9 +50,10 @@ export default function Home() {
     }})();
   }, []);
 
-
+  //画面に出力する内容をgameoverかどうかによって変更する
   if(!gameover){
-      content =(
+      //ゲームオーバーならキャラクター、障害物、床を出力する。
+    content =(
       <div>
         <div className ={style.game_box}>
           <div className ={style.display}>
@@ -67,18 +64,19 @@ export default function Home() {
         </div>
       </div>
   )}else{
+    //ゲームオーバーなら最高スコア、ゲームオーバー表示を出力する。
     content =( 
-    <div>
-      <Bestscore/>
-      <Gameover/>
-    </div>
+      <div>
+        <Bestscore/>
+        <Gameover/>
+      </div>
   )}
 
-
+  //先ほど設定したcontentの内容を出力する。
   return(
     <div>
-    <Timer gameover = {gameover}/>
-    {content}
+      <Timer gameover = {gameover}/>
+      {content}
     </div>
   )
 }

@@ -9,7 +9,7 @@ let isActive = true;
 const ylist = [0,20,60];
 
 export function Obstacle(){
-    const obstacleRef = useRef(null);
+    //xpositionsとypositionsという変数を設定し、その内容を変更するsetXposition, setYpositionという関数を設定する。
     const [xpositions, setxPositions] = useState<number[]>([]);
     const [ypositions, setyPositions] = useState<number[]>([]);
 
@@ -25,7 +25,7 @@ export function Obstacle(){
         }
     }
 
-    //要素を描画する
+    //障害物を対象のx座標とy座標に描画する
     const createObs = ()=>{
         return(
         <div>
@@ -84,27 +84,27 @@ export function Obstacle(){
     },[]);
 
     useEffect(()=>{
-            //はみ出た分は取り除く
+            //はみ出た要素は削除
         if(xpositions[0] <= -0.1){
             remove();
         }
         });
-
+            //障害物を0～2秒のランダムな時間で生成する
     useEffect(() => {
     (async () => {
         while (isActive) {
-            const delay = Math.floor(Math.random() * 1000+ Math.random()*1000) ; // 1〜3秒
+            const delay = Math.floor(Math.random() * 2000) ; // 0〜2秒
             await sleep(delay);
             if (!isActive) break;
             add_positions();
         }
     })();
     return () => {
-        isActive = false; // アンマウント時にループ終了
+        isActive = false; //オブジェクトが画面内から消えたらループ処理から抜け出す
     };
     }, []);
 
-
+    //画面を出力
     return(
         <div> 
             {createObs()}
