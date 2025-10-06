@@ -78,7 +78,7 @@ export function Obstacle(){
     };
     
 
-
+            //障害物を動かす
     useEffect(()=>{
         move_xpositions();
     },[]);
