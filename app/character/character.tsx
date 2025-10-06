@@ -28,11 +28,15 @@ export function Character(){
     }
     
 
-    //clickを検知して、ジャンプをする。
+    //click, spaceを検知して、ジャンプをする。
     useEffect(()=>{
         window.addEventListener("click", ()=>{
                 jump();
         });
+        window.addEventListener("keydown", (e)=>{
+            if(e.code === "Space"){
+                jump();
+        }})
     })
 
     //キャラクターとして画面を出力
